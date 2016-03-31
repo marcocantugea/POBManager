@@ -42,11 +42,11 @@ class MSAccessConnector {
     }
     
     public function OpenConnection(){
-        $dbName = $_SERVER["DOCUMENT_ROOT"] ."/".$this->pathServer. "/database/pobdatabase.accdb";
+        $dbName = $_SERVER["DOCUMENT_ROOT"] ."/".$this->pathServer. "/database/pobdatabase.mdb";
         if (!file_exists($dbName)) {
            die("Could not find database file.");
         }
-        $this->conn = new PDO("odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=$dbName; Uid=; Pwd=;");
+        $this->conn = new PDO("odbc:Driver={Microsoft Access Driver (*.mdb)}; DBQ=$dbName; Uid=; Pwd=;");
     }
     
     public function CloseDataBase(){
