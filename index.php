@@ -23,7 +23,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
     </head>
     <body>
         <?php
-        // put your code here
+            include 'topInclude.php';
+           $_MSAccessdb = new MSAccessConnector();
+           $_MSAccessdb->OpenConnection();
+           $sql="insert into t_companies (company_name,active) values ('test',1)";
+           //$_MSAccessdb->conn->query($sql);
+           $result=  $this->mysqlconector->conn->query($sql) or trigger_error("Error ADOUsers::AddNewUser:mysqli=".mysqli_error($this->mysqlconector->conn),E_USER_ERROR);
+           $_MSAccessdb->CloseDataBase();
         ?>
     </body>
 </html>

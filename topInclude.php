@@ -21,7 +21,7 @@
 date_default_timezone_set("America/Mexico_City");
 
 //Configuracion del sistema
-$pathconfig="/ControlFacturas";
+$pathconfig="/POBManager";
 include ($_SERVER['DOCUMENT_ROOT'].$pathconfig."/Config.php");
 $config= new Config();
 
@@ -37,7 +37,7 @@ $logoutpage="$config->domain$direccion/logout.php";
 
 // Connector de base de datos
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/database/MysqlConnector.php");
-
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/database/MSAccessConnector.php");
 
 // Classes communes
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/common/ArrayList.php");
@@ -45,16 +45,9 @@ include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/common/DateFunctions
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/common/SqlQueryBuilder.php");
 
 // Access Data Objects
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOUsers.php");
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOFacturas.php");
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOPagosFactura.php");
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOEstadoFacturas.php");
+
 
 //Entidades del sistema
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/UserObj.php");
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/FacturaObj.php");
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/PagoFacturaObj.php");
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/EstadoFacturaObj.php");
 
 // External
-include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/external/simplecapcha/simple-php-captcha.php");
+//include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/external/simplecapcha/simple-php-captcha.php");
