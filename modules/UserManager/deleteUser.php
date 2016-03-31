@@ -1,6 +1,6 @@
 <?php
 
-/*
+/* 
  * Copyright (C) 2016 MarcoCantu
  *
  * This program is free software; you can redistribute it and/or
@@ -18,16 +18,29 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-/**
- * Description of Config
- *
- * @author MarcoCantu
- */
-class Config {
-    public $username="root";
-    public $password="root";
-    public $database="pobmanager";
-    public $servername="localhost";
-    public $pathServer= "POBManager";
-    public $domain="http://localhost:8888";
+include 'topInclude.php';
+
+$debug=false;
+$redirectpage="UserManager.php";
+$SessionUser= unserialize($_SESSION['UserObj']);
+$SessionUser->GenerateToken();
+
+if(!empty($_GET)){
+    if(isset($_GET['param']) && isset($_GET['token']) ){
+        $iduser=$_GET['param'];
+        $token=$_GET['token'];
+        
+        if($token==$SessionUser->token){
+            $User= new UserObj();
+            $User->iduser=$iduser;
+            $_ADOUser =  new ADOUsers();
+            $_ADOUser->debug=$debug;
+
+            $_ADOUser->DeleteUser($User);
+        }   
+    }
+}
+
+if(!$debug){
+    echo '<script type="text/javascript" > document.location.href="'.$redirectpage.'"</script>';
 }

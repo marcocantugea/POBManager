@@ -1,6 +1,6 @@
 <?php
 
-/*
+/* 
  * Copyright (C) 2016 MarcoCantu
  *
  * This program is free software; you can redistribute it and/or
@@ -18,16 +18,7 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-/**
- * Description of Config
- *
- * @author MarcoCantu
- */
-class Config {
-    public $username="root";
-    public $password="root";
-    public $database="pobmanager";
-    public $servername="localhost";
-    public $pathServer= "POBManager";
-    public $domain="http://localhost:8888";
-}
+?>
+</div>
+    </body>
+</html>

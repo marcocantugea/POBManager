@@ -45,9 +45,10 @@ include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/common/DateFunctions
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/common/SqlQueryBuilder.php");
 
 // Access Data Objects
-
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOUsers.php");
 
 //Entidades del sistema
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/UserObj.php");
 
 // External
 //include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/external/simplecapcha/simple-php-captcha.php");

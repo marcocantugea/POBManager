@@ -19,15 +19,21 @@
  */
 
 /**
- * Description of Config
+ * Description of UserObj
  *
  * @author MarcoCantu
  */
-class Config {
-    public $username="root";
-    public $password="root";
-    public $database="pobmanager";
-    public $servername="localhost";
-    public $pathServer= "POBManager";
-    public $domain="http://localhost:8888";
+class UserObj {
+    public $iduser;
+    public $user;
+    public $pass;
+    public $active;
+    public $email;
+    public $token;
+    
+    public function GenerateToken(){
+        if($this->iduser>0 && !empty($this->email)){
+             $this->token=md5($this->iduser.  $this->email . date('d'));
+        }
+    }
 }

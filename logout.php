@@ -1,6 +1,6 @@
 <?php
 
-/*
+/* 
  * Copyright (C) 2016 MarcoCantu
  *
  * This program is free software; you can redistribute it and/or
@@ -18,16 +18,13 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-/**
- * Description of Config
- *
- * @author MarcoCantu
- */
-class Config {
-    public $username="root";
-    public $password="root";
-    public $database="pobmanager";
-    public $servername="localhost";
-    public $pathServer= "POBManager";
-    public $domain="http://localhost:8888";
+include ("topInclude.php");
+
+if(isset($_SESSION['UserObj'])){
+    unset($_SESSION['UserObj']);
+    $_SESSION['Show_Loggin']=true;
+    
+   
 }
+$indexpath = $config->domain."/".$config->pathServer."/index.php";
+echo '<script type="text/javascript" > document.location.href="'.$indexpath.'"</script>';
