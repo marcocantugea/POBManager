@@ -1,6 +1,6 @@
 <?php
 
-/*
+/* 
  * Copyright (C) 2016 MarcoCantu
  *
  * This program is free software; you can redistribute it and/or
@@ -18,24 +18,29 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-/**
- * Description of UserObj
- *
- * @author MarcoCantu
- */
-class UserObj {
-    public $iduser;
-    public $user;
-    public $pass;
-    public $active;
-    public $email;
-    public $token;
-    
-    public function GenerateToken(){
-        if($this->iduser>0 && !empty($this->email)){
-             $this->token=md5($this->iduser.  $this->email . date('d'));
-        }else{
-            $this->token="947djci93iu";
+include 'topinclude.php';
+
+$debug=false;
+$redirectpage="CompaniesManager.php";
+$SessionUser= new UserObj();
+$SessionUser= unserialize($_SESSION['UserObj']);
+$SessionUser->GenerateToken();
+
+if(!empty($_GET)){
+    if(isset($_GET['token'])){
+        $token=$_GET['token'];
+        if($token==$SessionUser->token){
+            $company= new CompanyObj();
+            $company->idcompany=$_GET['param'];
+            
+            $_ADOCompanies = new ADOCompanies();
+            $_ADOCompanies->ActiveCompany($company);
+            if($debug){
+                echo 'Record updated';
+            }
         }
     }
+}
+if(!$debug){
+     echo '<script type="text/javascript" > document.location.href="'.$redirectpage.'"</script>';
 }

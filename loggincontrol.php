@@ -21,12 +21,12 @@
 ?>
 <!--<form id="loginform" name="loginform" method="post" action="#">-->
 <div id="LoginForm" class="addnew" style="width: 350px;">
-    <h3>Inicie Session</h3>
+    <h3>Loggin into the System</h3>
     
         <table  style="width: 300px">
              <tr>
                 <td>
-                    Usuario:
+                    User:
                 </td>
                  <td>
                      <input type="text" name="user" id="user" value=""/>
@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <td>
-                    Contraseña:
+                    Password:
                 </td>
                  <td>
                      <input type="password" name="password" id="password" value=""/>
@@ -44,7 +44,7 @@
                 
                 <td  colspan="2" style="text-align: center">
                     <p></p>
-                    <button id="btnLoggin" style="width: 176px;">Entrar</button>
+                    <button id="btnLoggin" style="width: 176px;">Enter</button>
                 </td>
             </tr>
         </table>   

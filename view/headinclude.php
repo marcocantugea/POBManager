@@ -27,7 +27,7 @@ $globalpath= $config->domain."/".$config->pathServer;
         <title>Puntotec.com.mx - Control de Facturas</title>
         <link rel="stylesheet" type="text/css" href="<?php echo $globalpath;?>/css/view.css" media="all">
         <link rel="stylesheet" type="text/css" href="<?php echo $globalpath;?>/css/styles.css" media="all">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
     </head>
  <body>
     <div id="content">

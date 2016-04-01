@@ -19,23 +19,12 @@
  */
 
 /**
- * Description of UserObj
+ * Description of CompanyObj
  *
  * @author MarcoCantu
  */
-class UserObj {
-    public $iduser;
-    public $user;
-    public $pass;
+class CompanyObj {
+    public $idcompany;
+    public $companyname;
     public $active;
-    public $email;
-    public $token;
-    
-    public function GenerateToken(){
-        if($this->iduser>0 && !empty($this->email)){
-             $this->token=md5($this->iduser.  $this->email . date('d'));
-        }else{
-            $this->token="947djci93iu";
-        }
-    }
 }
