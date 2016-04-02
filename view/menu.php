@@ -27,7 +27,7 @@ $indexpage=$config->domain."/".$config->pathServer.""
     <li><a href='<?php echo $indexpage;?>/index.php'><span>Home</span></a></li>
    <li class='active has-sub'><a href='#'><span>Management</span></a>
       <ul>
-         <li class='has-sub'><a href='#'><span>Database of Peronsal</span></a>
+         <li class='has-sub'><a href='#'><span>Database of Personel</span></a>
          </li>
             
             <!--<ul>
@@ -46,7 +46,7 @@ $indexpage=$config->domain."/".$config->pathServer.""
            <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/Catalogs/Companies/CompaniesManager.php'><span>Companies</span></a>
             <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/Catalogs/Shifts/ShiftManager.php'><span>Shifts</span></a>
             <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/Catalogs/Cabins/CabinsManager.php'><span>Cabins</span></a>
-            <li class='has-sub'><a href='#'><span>Boats</span></a>
+            <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/Catalogs/Boats/BoatManager.php'><span>Boats</span></a>
        </ul>
    </li>
    <li class='last'><a href='<?php echo $logoutpage;?>'><span>Exit</span></a></li>
