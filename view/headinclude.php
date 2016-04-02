@@ -32,6 +32,7 @@ $globalpath= $config->domain."/".$config->pathServer;
  <body>
     <div id="content">
         <div style="width: 100%; height: 75px; text-align: center;">
-            <h2 ><img src="<?php echo $globalpath;?>/images/logo.jpg" style="height: 60px;vertical-align:middle" /> 
-            MURALLA IV POB MANAGER</h2>
+            <!--<h2 ><img src="<?php echo $globalpath;?>/images/logo.jpg" style="height: 60px;vertical-align:middle" /> 
+            MURALLA IV POB MANAGER</h2>-->
+            <h1>Personal Onbard Manager</h1>
         </div>

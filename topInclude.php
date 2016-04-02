@@ -48,11 +48,13 @@ include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/common/SqlQueryBuild
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOUsers.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOCompanies.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOShift.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOCabins.php");
 
 //Entidades del sistema
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/UserObj.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/CompanyObj.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/ShiftObj.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/CabinObj.php");
 
 // External
 //include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/external/simplecapcha/simple-php-captcha.php");

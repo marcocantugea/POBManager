@@ -45,7 +45,7 @@ $indexpage=$config->domain."/".$config->pathServer.""
        <ul>
            <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/Catalogs/Companies/CompaniesManager.php'><span>Companies</span></a>
             <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/Catalogs/Shifts/ShiftManager.php'><span>Shifts</span></a>
-            <li class='has-sub'><a href='#'><span>Cabins</span></a>
+            <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/Catalogs/Cabins/CabinsManager.php'><span>Cabins</span></a>
             <li class='has-sub'><a href='#'><span>Boats</span></a>
        </ul>
    </li>
