@@ -190,19 +190,26 @@ class ADOBoats {
     public function GetBoatsByQuery($ListBoatObj,$SqlQueryBuilder){
         if(!empty($ListBoatObj) && !empty($SqlQueryBuilder)){
             $this->mysqlconector->OpenConnection();
-            $idboat=mysqli_real_escape_string($this->mysqlconector->conn,$BoatObj->idboat);
+            
+            $SqlQueryBuilder->setTable("t_lifeboats");
+            $SqlQueryBuilder->addColumn("boatnumber");
+            $SqlQueryBuilder->addColumn("boatlocation");
+            $SqlQueryBuilder->addColumn("active");
+            $SqlQueryBuilder->addColumn("idboat");
             
             if($this->debug){
-                echo '<br/>'. $sqlobj->buildQuery();
+                echo '<br/>'. $SqlQueryBuilder->buildQuery();
             }
             
             $result=  $this->mysqlconector->conn->query($SqlQueryBuilder->buildQuery()) or trigger_error("Error ADOUsers::AddNewUser:mysqli=".mysqli_error($this->mysqlconector->conn),E_USER_ERROR);
             if($result->num_rows>0){
                 while($row = $result->fetch_assoc()) {
+                    $BoatObj = new BoatObj();
                     $BoatObj->idboat=$row['idboat'];
                     $BoatObj->boatnumber=$row['boatnumber'];
                     $BoatObj->boatlocation=$row['boatlocation'];
                     $BoatObj->active=$row['active'];
+                    $ListBoatObj->addItem($BoatObj);
                 }
             }
             $this->mysqlconector->CloseDataBase();

@@ -44,6 +44,12 @@ input{
     font-size: medium;
     padding-left: 5px;
 }
+select{
+    display: inline-block;
+    height: 35px;
+    font-size: medium;
+    padding-left: 5px;
+}
 
 button{
     height: 35px;
@@ -64,4 +70,41 @@ button{
 }
 .tableInfo td{
     border-bottom:  aliceblue solid thin;
+}
+.tablePersonel{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.tablePersonel th{
+    font-weight: bold;
+    font-size: medium;
+    background-color:  darkblue;
+    color: white;
+}
+.tablePersonel td{
+     border-bottom:  aliceblue solid thin;
+     padding-left: 10px;
+}
+
+.GridViewItem{
+    width: 250px;
+    text-align: center;
+    border: lightgray solid thin;
+    height: 250px;
+    margin: 5px;
+    float: left;
+}
+.GridViewItem:hover{
+    background-color: lightyellow;
+}
+.GridViewItem img{
+    border: blue solid thin;
+    height: 150px;
+    margin-top: 5px;
+}
+.GridViewItem h5{
+    margin: 5px;
+}
+.GridViewItem div{
+    font-size: small;
 }

@@ -179,6 +179,11 @@ class ADOShift {
         if(!empty($ListShiftObj) && !empty($SQLQueryBuilder)){
             $this->mysqlconector->OpenConnection();
             
+            $SQLQueryBuilder->setTable("t_shifts");
+            $SQLQueryBuilder->addColumn("idshift");
+            $SQLQueryBuilder->addColumn("shift");
+            $SQLQueryBuilder->addColumn("active");
+            
             if($this->debug){
                 echo '<br/>'. $SQLQueryBuilder->buildQuery();
             }
@@ -186,9 +191,11 @@ class ADOShift {
             $result=  $this->mysqlconector->conn->query($SQLQueryBuilder->buildQuery()) or trigger_error("Error ADOUsers::AddNewUser:mysqli=".mysqli_error($this->mysqlconector->conn),E_USER_ERROR);
             if($result->num_rows>0){
                 while($row = $result->fetch_assoc()) {
+                    $ShiftObj =new ShiftObj();
                     $ShiftObj->idshift= $row['idshift'];
                     $ShiftObj->shift=$row['shift'];
                     $ShiftObj->active=$row['active'];
+                    $ListShiftObj->addItem($ShiftObj);
                 }
             }
             $this->mysqlconector->CloseDataBase();

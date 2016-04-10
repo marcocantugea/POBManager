@@ -27,9 +27,14 @@ $indexpage=$config->domain."/".$config->pathServer.""
     <li><a href='<?php echo $indexpage;?>/index.php'><span>Home</span></a></li>
    <li class='active has-sub'><a href='#'><span>Management</span></a>
       <ul>
-         <li class='has-sub'><a href='#'><span>Database of Personel</span></a>
+         <li class='active has-sub'><a href='#'><span>Personal</span></a> 
+            <ul>
+                <li class='has-sub'><a href='<?php echo $indexpage;?>/modules/PersonelManager/PersonelManager.php'><span>Crew Database</span></a>
+                </li>
+                <li class='has-sub'><a href='#'><span>Visitors</span></a>
+                </li>
+            </ul>
          </li>
-            
             <!--<ul>
                <li><a href='#'><span>Sub Product</span></a></li>
                <li class='last'><a href='#'><span>Sub Product</span></a></li>

@@ -197,6 +197,13 @@ class ADOCabins {
         if(!empty($ListCabinObj) && !empty($SqlQueryBuilder)){
             $this->mysqlconector->OpenConnection();
             
+            $SqlQueryBuilder->setTable("t_cabins");
+            $SqlQueryBuilder->addColumn("cabin");
+            $SqlQueryBuilder->addColumn("active");
+            $SqlQueryBuilder->addColumn("capofcabin");
+            $SqlQueryBuilder->addColumn("telephone");
+            $SqlQueryBuilder->addColumn("idcabin");
+            
             if($this->debug){
                 echo '<br/>'. $SqlQueryBuilder->buildQuery();
             }
@@ -204,11 +211,13 @@ class ADOCabins {
             $result=  $this->mysqlconector->conn->query($SqlQueryBuilder->buildQuery()) or trigger_error("Error ADOUsers::AddNewUser:mysqli=".mysqli_error($this->mysqlconector->conn),E_USER_ERROR);
             if($result->num_rows>0){
                 while($row = $result->fetch_assoc()) {
+                    $CabinObj = new CabinObj();
                     $CabinObj->idcabin=$row['idcabin'];
                     $CabinObj->cabin=$row['cabin'];
                     $CabinObj->active=$row['active'];
                     $CabinObj->capofcabin=$row['capofcabin'];
                     $CabinObj->telephone=$row['telephone'];
+                    $ListCabinObj->addItem($CabinObj);
                 }
             }
             $this->mysqlconector->CloseDataBase();

@@ -50,6 +50,9 @@ include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOCompanies.php
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOShift.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOCabins.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOBoats.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOPersonel.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOCrewDefaults.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/dao/ADOCrewDocuments.php");
 
 //Entidades del sistema
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/UserObj.php");
@@ -57,6 +60,9 @@ include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/CompanyObj.
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/ShiftObj.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/CabinObj.php");
 include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/BoatObj.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/PersonelObj.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/CrewDefaultsObj.php");
+include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/com/entities/CrewDocumentObj.php");
 
 // External
 //include ($_SERVER['DOCUMENT_ROOT'].$direccion."/include/external/simplecapcha/simple-php-captcha.php");
